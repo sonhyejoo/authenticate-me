@@ -15,28 +15,19 @@ const Navigation = () => {
   }, [sessionUser]);
 
   return (
-    <ul>
-      {showProfile && (
-        <li>
-          <ProfileButton />
-        </li>
-      )}
+    <>
+      {showProfile && <ProfileButton user={sessionUser} />}
       {!showProfile && (
-        <>
+        <ul>
           <li>
             <NavLink to="/login">Login</NavLink>
           </li>
           <li>
             <NavLink to="/signup">Sign Up</NavLink>
           </li>
-        </>
+        </ul>
       )}
-      {showProfile && (
-        <li>
-          <NavLink to="/logout">Logout</NavLink>
-        </li>
-      )}
-    </ul>
+    </>
   );
 };
 
