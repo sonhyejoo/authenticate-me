@@ -41,6 +41,25 @@ export const restoreUser = () => async (dispatch) => {
   return response;
 };
 
+export const signUp = (user) => async (dispatch) => {
+  const { username, email, password } = user;
+  const response = await csrfFetch("/api/users", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username,
+      email,
+      password,
+    }),
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(setUser(data.user));
+  }
+  return response;
+};
+
 const initialState = {
   user: null,
 };
