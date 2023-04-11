@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/session";
 import { Redirect } from "react-router-dom";
+import "./LoginForm.css";
 
 const LoginFormPage = () => {
   const dispatch = useDispatch();
@@ -30,23 +31,19 @@ const LoginFormPage = () => {
   return (
     <>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <ul>
+      <form className="login-form" onSubmit={handleSubmit}>
+        <ul className="form-group">
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <div>
-          <label htmlFor="credential">
-            Credential:
-            <input type="text" value={cred} onChange={updateCred} />
-          </label>
+        <div className="form-group">
+          <label htmlFor="credential">Credential: </label>
+          <input type="text" value={cred} onChange={updateCred} />
         </div>
-        <div>
-          <label htmlFor="password">
-            Password:
-            <input type="password" value={pass} onChange={updatePass} />
-          </label>
+        <div className="form-group">
+          <label htmlFor="password">Password: </label>
+          <input type="password" value={pass} onChange={updatePass} />
         </div>
         <button>Log In</button>
       </form>
