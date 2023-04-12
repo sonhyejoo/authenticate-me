@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { logout } from "../../store/session";
 import { useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, NavLink } from "react-router-dom";
 
 const ProfileButton = ({ user }) => {
   const dispatch = useDispatch();
@@ -44,9 +44,12 @@ const ProfileButton = ({ user }) => {
       </button>
       {showMenu && (
         <ul>
-          <li>{username}</li>
-          <li>{email}</li>
-          <li>
+          <li className="button">
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li className="button">{username}</li>
+          <li className="button">{email}</li>
+          <li className="button">
             <button onClick={handleLogout}>Logout</button>
           </li>
         </ul>

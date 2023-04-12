@@ -22,6 +22,9 @@ const Navigation = () => {
       {!showProfile && (
         <ul>
           <li className="button">
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li className="button">
             <LoginFormModal />
           </li>
           <li className="button">
