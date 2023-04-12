@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { restoreUser } from "./store/session";
-import LoginFormPage from "./components/LoginFormPage";
+import LoginFormPage from "./components/LoginFormModal";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 

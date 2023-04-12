@@ -6,6 +6,7 @@ import configureStore from "./store";
 import csrfFetch, { restoreCSRF } from "./store/csrf";
 import "./index.css";
 import App from "./App";
+import ModalProvider from "./context/Modal";
 
 import * as sessionActions from "./store/session";
 
@@ -20,11 +21,13 @@ if (process.env.NODE_ENV !== "production") {
 
 function Root() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+    <ModalProvider>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </ModalProvider>
   );
 }
 
