@@ -10,7 +10,7 @@ import "./Modal.css";
 
 const ModalContext = createContext();
 
-export function ModalProvider({ children }) {
+export default function ModalProvider({ children }) {
   const modalRef = useRef();
   const [value, setValue] = useState("");
 
