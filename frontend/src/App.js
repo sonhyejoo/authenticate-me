@@ -18,9 +18,6 @@ function App() {
         <Navigation />
       </div>
       <Switch>
-        <Route exact path="/">
-          <h1>Hello from App</h1>
-        </Route>
         <Route path="/login">
           <LoginFormPage />
         </Route>

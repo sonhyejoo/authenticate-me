@@ -29,7 +29,6 @@ const ProfileButton = ({ user }) => {
   }, [showMenu]);
 
   const openMenu = () => {
-    console.log(showMenu);
     setShowMenu(true);
   };
 

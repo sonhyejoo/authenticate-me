@@ -1,0 +1,21 @@
+/* Style for the navigation bar */
+.navbar {
+  background-color: #333; /* Set the background color */
+  overflow: hidden; /* Prevent content from overflowing */
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center the child elements vertically */
+}
+
+/* Style for the buttons */
+.button {
+  display: block;
+
+  background-color: white; /* Set the background color */
+  color: #333; /* Set the color */
+  border: none; /* Remove the border */
+  padding: 10px 20px; /* Add some padding */
+  cursor: pointer; /* Change the cursor to a pointer */
+}
+a{
+  text-decoration: none
+}

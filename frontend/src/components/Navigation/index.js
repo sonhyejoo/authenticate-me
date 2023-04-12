@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import "./Navigation.css";
 
 import ProfileButton from "./ProfileButton";
 
@@ -15,19 +16,19 @@ const Navigation = () => {
   }, [sessionUser]);
 
   return (
-    <>
+    <div className="navbar">
       {showProfile && <ProfileButton user={sessionUser} />}
       {!showProfile && (
         <ul>
-          <li>
+          <li className="button">
             <NavLink to="/login">Login</NavLink>
           </li>
-          <li>
+          <li className="button">
             <NavLink to="/signup">Sign Up</NavLink>
           </li>
         </ul>
       )}
-    </>
+    </div>
   );
 };
 
