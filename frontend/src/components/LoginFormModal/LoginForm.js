@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../../store/session";
-import { Redirect } from "react-router-dom";
 import "./LoginForm.css";
 
 const LoginForm = () => {
@@ -9,12 +8,6 @@ const LoginForm = () => {
   const [cred, setCred] = useState("");
   const [pass, setPass] = useState("");
   const [errors, setErrors] = useState([]);
-  const sessionUser = useSelector((state) => state.session.user);
-
-  //**TODO: REMOVE WHEN MODAL PORTAL DONE */
-  // if (sessionUser && Object.keys(sessionUser).length !== 0) {
-  //   return <Redirect to="/" />;
-  // }
 
   const updateCred = (e) => setCred(e.target.value);
   const updatePass = (e) => setPass(e.target.value);
